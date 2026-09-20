@@ -1,0 +1,25 @@
+[package]
+name = "hookmgr"
+version = "0.1.0"
+edition = "2021"
+description = "A multi-hook-type git hook manager driven by one .hookmgr.toml — a Husky/pre-commit-framework alternative needing no Node or Python"
+license = "MIT"
+authors = ["Animesh Raj <animesh080808@gmail.com>"]
+repository = "https://github.com/itsarraj/hookmgr"
+readme = "README.md"
+keywords = ["git", "hooks", "pre-commit", "husky", "cli"]
+categories = ["command-line-utilities", "development-tools"]
+
+[lib]
+name = "hookmgr"
+path = "src/lib.rs"
+
+[[bin]]
+name = "hookmgr"
+path = "src/main.rs"
+
+[dependencies]
+serde = { version = "1", features = ["derive"] }
+toml = "0.8"
+clap = { version = "4", features = ["derive"] }
+anyhow = "1"
